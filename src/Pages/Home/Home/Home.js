@@ -1,11 +1,12 @@
 import React from "react";
+import About from "../Carousel/About/About";
 import Carousel from "../Carousel/Carousel";
 
 const Home = () => {
   return (
-    <div>
+    <div className="max-w-6xl mx-auto">
       <Carousel></Carousel>
-      <h1>Home</h1>
+      <About></About>
     </div>
   );
 };

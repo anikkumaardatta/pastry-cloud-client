@@ -54,9 +54,14 @@ const Header = () => {
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-ghost text-2xl">
-            <FaSignInAlt></FaSignInAlt>
-          </button>
+          <div
+            className="tooltip tooltip-bottom  tooltip-primary"
+            data-tip="Log in"
+          >
+            <button className="btn btn-ghost text-2xl">
+              <FaSignInAlt></FaSignInAlt>
+            </button>
+          </div>
           {/* <div className="btn btn-ghost">
             <div className="text-1xl font-semibold">Anik Datta</div>
           </div> */}
