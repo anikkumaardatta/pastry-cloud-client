@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../assets/logo.png";
 const Header = () => {
   return (
-    <div className="bg-red-600">
+    <div className="bg-rose-600">
       <div className="max-w-6xl mx-auto text-white navbar">
         <div className="navbar-start">
           <div className="dropdown">
@@ -72,8 +72,10 @@ const Header = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <button className="btn mx-1 rounded-none btn-ghost">Log in</button>
-          <button className="btn mx-1 rounded-none btn-ghost">Sign Up</button>
+          <div className="btn-group">
+            <button className="btn btn-ghost">Log in</button>
+            <button className="btn btn-ghost">Sign Up</button>
+          </div>
           {/* <div className="btn btn-ghost">
             <div className="text-1xl font-semibold">Anik Datta</div>
           </div> */}
