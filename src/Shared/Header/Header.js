@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/logo.png";
-import { FaSignInAlt } from "react-icons/fa";
+import { FaSignInAlt, FaSignOutAlt } from "react-icons/fa";
+import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 const Header = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .catch((error) => console.error(error));
+  };
   const menuItems = (
     <>
       <li>
@@ -54,19 +62,41 @@ const Header = () => {
           <ul className="menu menu-horizontal p-0">{menuItems}</ul>
         </div>
         <div className="navbar-end">
-          <div
-            className="tooltip tooltip-bottom  tooltip-primary"
-            data-tip="Log in"
-          >
-            <Link to="/login">
-              <button className="btn btn-ghost text-2xl">
-                <FaSignInAlt></FaSignInAlt>
-              </button>
-            </Link>
-          </div>
-          {/* <div className="btn btn-ghost">
-            <div className="text-1xl font-semibold">Anik Datta</div>
-          </div> */}
+          {user ? (
+            <>
+              <div className="dropdown dropdown-end dropdown-hover">
+                <div className="avatar m-1 cursor-pointer" tabIndex={0}>
+                  <div className="w-11 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                    <img src={user?.photoURL && user.photoURL} />
+                  </div>
+                </div>
+                <ul
+                  tabIndex={0}
+                  className="dropdown-content menu p-2 shadow bg-base-100 text-rose-600 rounded-box w-52"
+                >
+                  <li className="cursor-default">
+                    <p>{user?.displayName && user.displayName}</p>
+                  </li>
+
+                  <button
+                    onClick={handleLogOut}
+                    className="btn btn-ghost cursor-pointer"
+                  >
+                    Sign Out{" "}
+                    <FaSignOutAlt className="ml-1 text-2xl"></FaSignOutAlt>
+                  </button>
+                </ul>
+              </div>
+            </>
+          ) : (
+            <>
+              <Link to="/login">
+                <button className="btn btn-ghost ">
+                  Log In <FaSignInAlt className="ml-2 text-2xl"></FaSignInAlt>
+                </button>
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>
