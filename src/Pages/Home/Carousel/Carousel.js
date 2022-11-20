@@ -24,7 +24,7 @@ const carouselItemData = [
 
 const Carousel = () => {
   return (
-    <div className=" mt-3 carousel carousel-center max-w-6xl mx-auto p-4 space-x-4 bg-pink-200 rounded-box">
+    <div className="m-5 mt-3 carousel carousel-center max-w-6xl mx-auto p-4 space-x-4 bg-pink-200 rounded-box">
       {carouselItemData.map((carouselItem) => (
         <CarouselItem
           key={carouselItem.id}

@@ -1,11 +1,14 @@
 import React from "react";
-import aboutJPG from "../../../../assets/images/about.jpg";
+import aboutJPG from "../../../assets/images/about.jpg";
 
 const About = () => {
   return (
     <div className="hero my-20">
       <div className="hero-content flex-col lg:flex-row-reverse">
-        <img src={aboutJPG} className="max-w-sm rounded-lg shadow-2xl" />
+        <img
+          src={aboutJPG}
+          className="sm:max-w-sm max-w-xs rounded-lg shadow-2xl"
+        />
         <div className="sm:w-full lg:w-96">
           <h1 className="text-5xl font-bold">About us</h1>
           <p className="py-6">

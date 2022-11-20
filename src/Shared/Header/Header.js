@@ -15,7 +15,7 @@ const Header = () => {
   );
 
   return (
-    <div className="bg-rose-600">
+    <div className="bg-rose-600 sticky top-0 z-50">
       <div className="max-w-6xl mx-auto text-white navbar">
         <div className="navbar-start">
           <div className="dropdown bg-rose-600">
@@ -58,9 +58,11 @@ const Header = () => {
             className="tooltip tooltip-bottom  tooltip-primary"
             data-tip="Log in"
           >
-            <button className="btn btn-ghost text-2xl">
-              <FaSignInAlt></FaSignInAlt>
-            </button>
+            <Link to="/login">
+              <button className="btn btn-ghost text-2xl">
+                <FaSignInAlt></FaSignInAlt>
+              </button>
+            </Link>
           </div>
           {/* <div className="btn btn-ghost">
             <div className="text-1xl font-semibold">Anik Datta</div>

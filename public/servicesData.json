@@ -1,0 +1,38 @@
+[
+    {
+      "thumbnail": "https://i.ibb.co/RcTB3Xm/Lemon-Layer-Pastry.jpg",
+      "title": "Lemon Layer Pastry 120gm",
+      "description": "Shake well before use, and use the same amount of bottled lemon juice in a recipe as you would fresh juice. If a recipe specifies the juice of 1 lemon, replace it with 2 tablespoons of bottled lemon juice.",
+      "price": "4.99"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/GsNygkw/Red-Velvet-Heart-Shaped-Pastry.jpg",
+      "title": "Red Velvet Pastry 200gm",
+      "description": "Popular in the southern U.S., red velvet cake is a vanilla cake with a few tablespoons of cocoa powder and red food coloring mixed in. Vinegar and buttermilk bring some acid to the batter, adding a bit of tanginess that balances out the sweet cream cheese-butter frosting that is standard.",
+      "price": "9.99"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/fS6v3f6/Fudge-Brownie-Pastry.jpg",
+      "title": "Fudge Brownie Pastry 120gm",
+      "description": "Brownies are not classified as cakes – this is a very interesting point about the brownie. The reason for this is because although the texture is similar to cakes, it is classed as finger food (whereas usually cake is eaten with a fork), therefore they are categories as a cookie bar (in America).",
+      "price": "4.99"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/jLyNGGH/Vanilla-Triangle-Pastry.jpg",
+      "title": "Vanilla Triangle Pastry 180gm",
+      "description": "In order to be considered a pastry, the item in question must incorporate a fat in to the dough. It isn't the method of cooking- frying or baking- but the inclusion of a fat in the dough. Doughnuts do, therefore they are pastries.",
+      "price": "8.99"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/cxC7CtG/Vanilla-pasty.jpg",
+      "title": "Vanilla pasty 120gm",
+      "description": "Pastry is baked food made with a dough of flour, water and shortening (solid fats, including butter or lard) that may be savoury or sweetened. Sweetened pastries are often described as bakers' confectionery.",
+      "price": "6.99"
+    },
+    {
+      "thumbnail": "https://i.ibb.co/f852fxX/Strawberry-Swirl-Pastry.jpg",
+      "title": "Strawberry Swirl Pastry 130gm",
+      "description": "Even better, switch your pastry from shortcrust or puff to filo. This is the lowest-fat pastry by far, with 2.9g fat per 100g. This compares with 26.2g for puff or 31.4g for shortcrust. Filo is the lowest-calorie option too, and it's easy to use.",
+      "price": "6.99"
+    }
+  ]

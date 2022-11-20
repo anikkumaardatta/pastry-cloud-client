@@ -7,16 +7,14 @@ const CarouselItem = ({ carouselItem }) => {
       <div className="carousel-img">
         <img src={carouselItem.thumbnail} className="rounded-box" />
       </div>
-      <div className="absolute flex justify-between transform -translate-y-1/2 left-5 top-1/2">
-        <div className="hero">
-          <div className="hero-content">
-            <div className="max-w-md text-white">
-              <h1 className="sm:text-5xl font-semibold">
-                {carouselItem.title}
-              </h1>
-              <p className="py-6"></p>
-              <button className="btn btn-error">Order Now</button>
-            </div>
+      <div className="hero absolute flex justify-center transform -translate-y-1/2  top-1/2">
+        <div className="hero-content text-center">
+          <div className="max-w-md text-white">
+            <h1 className="text-5xl max-w-xs font-semibold">
+              {carouselItem.title}
+            </h1>
+            <p className="py-6"></p>
+            <button className="btn btn-error">Order Now</button>
           </div>
         </div>
       </div>
