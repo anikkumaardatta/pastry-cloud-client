@@ -1,5 +1,6 @@
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
+import MyReviews from "../../Pages/MyReviews/MyReviews";
 import NotFound from "../../Pages/NotFound/NotFound";
 import PastryDetails from "../../Pages/PastryDetails/PastryDetails/PastryDetails";
 import Pastries from "../../Shared/Pastries/Pastries/Pastries";
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
       {
         path: "/pastries",
         element: <Pastries></Pastries>,
+      },
+      {
+        path: "/myreviews",
+        element: <MyReviews></MyReviews>,
       },
       {
         path: "/pastries/:id",
