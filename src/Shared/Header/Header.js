@@ -14,10 +14,19 @@ const Header = () => {
   const menuItems = (
     <>
       <li>
-        <Link to="/">Home</Link>
+        <Link className="rounded-md px-8" to="/">
+          Home
+        </Link>
       </li>
       <li>
-        <Link to="/blogs">Blogs</Link>
+        <Link className="rounded-md px-8" to="Pastries">
+          Pastries
+        </Link>
+      </li>
+      <li>
+        <Link className="rounded-md px-8" to="/blogs">
+          Blogs
+        </Link>
       </li>
     </>
   );

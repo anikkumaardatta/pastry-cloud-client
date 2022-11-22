@@ -3,21 +3,31 @@ import { Link } from "react-router-dom";
 import loginSVG from "../../../assets/images/login.svg";
 import googleLogo from "../../../assets/google30.png";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn, googleSignIn } = useContext(AuthContext);
+
   const handleSubmitLogin = (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
     const pass = form.password.value;
-    console.log(email);
-    console.log(pass);
     signIn(email, pass)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Login", user);
       })
       .catch((error) => console.error(error));
+  };
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="hero min-h-screen max-w-5xl mx-auto bg-base-100">
@@ -67,7 +77,7 @@ const Login = () => {
             </label>
             <div className="divider">OR</div>
             <div className="form-control">
-              <button type="submit" className="btn btn-ghost">
+              <button onClick={handleGoogleSignIn} className="btn btn-ghost">
                 <img src={googleLogo} className="px-1" alt="" /> Google
               </button>
             </div>

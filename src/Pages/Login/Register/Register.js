@@ -5,7 +5,7 @@ import googleLogo from "../../../assets/google30.png";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
 
 const Register = () => {
-  const { createUser, updateUser } = useContext(AuthContext);
+  const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
   const handleSubmitRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -34,6 +34,17 @@ const Register = () => {
         console.error(error);
       });
     form.reset();
+  };
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then((result) => {
+        const user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
   return (
     <div className="hero min-h-screen max-w-5xl mx-auto bg-base-100">
@@ -106,12 +117,12 @@ const Register = () => {
               </div>
             </label>
             <div className="divider">OR</div>
-            <div className="form-control">
-              <button className="btn btn-ghost">
-                <img src={googleLogo} className="px-1" alt="" /> Google
-              </button>
-            </div>
           </form>
+          <div className="form-control">
+            <button onClick={handleGoogleSignIn} className="btn btn-ghost">
+              <img src={googleLogo} className="px-1" alt="" /> Google
+            </button>
+          </div>
         </div>
       </div>
     </div>

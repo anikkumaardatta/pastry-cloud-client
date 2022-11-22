@@ -1,14 +1,15 @@
 import React from "react";
+import Pastries from "../../../Shared/Pastries/Pastries/Pastries";
 import About from "../About/About";
 import Carousel from "../Carousel/Carousel";
-import Pastrys from "../Pastrys/Pastrys";
+import MyPastries from "../MyPastries/MyPastries";
 
 const Home = () => {
   return (
     <div className="max-w-6xl mx-auto">
       <Carousel></Carousel>
       <About></About>
-      <Pastrys></Pastrys>
+      <MyPastries></MyPastries>
     </div>
   );
 };
