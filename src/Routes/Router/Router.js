@@ -1,9 +1,11 @@
+import AddPastries from "../../Pages/AddPastries/AddPastries";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
 import NotFound from "../../Pages/NotFound/NotFound";
 import PastryDetails from "../../Pages/PastryDetails/PastryDetails/PastryDetails";
 import Pastries from "../../Shared/Pastries/Pastries/Pastries";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const { createBrowserRouter } = require("react-router-dom");
 const { default: Main } = require("../../layout/Main");
@@ -32,7 +34,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/myreviews",
-        element: <MyReviews></MyReviews>,
+        element: (
+          <PrivateRoute>
+            <MyReviews></MyReviews>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/addpastries",
+        element: (
+          <PrivateRoute>
+            <AddPastries></AddPastries>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/pastries/:id",

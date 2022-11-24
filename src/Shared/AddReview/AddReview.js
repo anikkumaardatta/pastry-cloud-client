@@ -1,10 +1,13 @@
 import React, { useContext } from "react";
+import toast, { Toaster } from "react-hot-toast";
 import { FaPlus } from "react-icons/fa";
+import { Navigate, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 
 const AddReview = ({ loaderData }) => {
   const { user } = useContext(AuthContext);
   const { _id, title } = loaderData;
+  const navigate = useNavigate();
 
   const handleAddReview = (event) => {
     event.preventDefault();
@@ -28,17 +31,17 @@ const AddReview = ({ loaderData }) => {
       phoneNumber,
       message,
     };
+    const toastError = (status) => toast.error(status);
+    const toastSuccess = (status) => toast.success(status);
 
     if (phoneNumber.length > 14 || phoneNumber.length < 11) {
-      return alert("Please type valid Phone Number");
+      return toastError("Please provide a valid phone number");
     } else if (message.length > 100) {
-      return alert(
+      return toastError(
         "Review message too long (please wright a review message les then 100 characters long"
       );
     } else if (message.length < 10) {
-      return alert(
-        "Review message too short (please wright a review message les then 100 characters long"
-      );
+      return toastError("Review message is too short");
     } else {
       fetch("http://localhost:5000/reviews", {
         method: "POST",
@@ -51,8 +54,10 @@ const AddReview = ({ loaderData }) => {
         .then((data) => {
           console.log(data);
           if (data.acknowledged) {
-            alert("Review added successfully");
+            toastSuccess("Review added successfully");
             form.reset();
+            navigate("/myreviews");
+            // <Navigate to="/myreviews" replace={true}></Navigate>;
           }
         })
         .catch((error) => console.log(error));
@@ -60,6 +65,7 @@ const AddReview = ({ loaderData }) => {
   };
   return (
     <div>
+      <Toaster position="bottom-center" reverseOrder={false}></Toaster>
       <div className="my-6 bg-base-200 p-5 rounded-lg ">
         <h1 className="text-3xl mb-6">Add a review</h1>
         <form onSubmit={handleAddReview}>

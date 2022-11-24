@@ -4,7 +4,6 @@ import Pastry from "../Pastry/Pastry";
 
 const Pastries = () => {
   const [pastries, setPastries] = useState([]);
-  console.log(pastries);
 
   useEffect(() => {
     fetch("http://localhost:5000/pastries")

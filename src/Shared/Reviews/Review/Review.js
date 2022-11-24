@@ -9,6 +9,7 @@ const Review = ({ review }) => {
     reviewDate,
     message,
   } = review;
+  console.log("This is new", review);
   return (
     <tr>
       <td>
@@ -31,28 +32,12 @@ const Review = ({ review }) => {
         <br />
       </td>
       <td>
-        {/* The button to open modal */}
-
-        <>
-          <label htmlFor="my-modal-3" className="btn btn-ghost btn-xs">
-            Show Text
-          </label>
-        </>
-
-        {/* Put this part before </body> tag */}
-        <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box relative">
-            <label
-              htmlFor="my-modal-3"
-              className="btn btn-primary btn-sm btn-circle absolute right-2 top-2"
-            >
-              ✕
-            </label>
-            <h3 className="text-lg font-bold mt-6">{reviewerName}</h3>
-            <p className="py-4 mb-2">{message}</p>
-          </div>
-        </div>
+        <textarea
+          className="textarea bg-white"
+          defaultValue={message}
+          placeholder="Bio"
+          readOnly
+        ></textarea>
       </td>
     </tr>
   );

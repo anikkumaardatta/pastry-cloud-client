@@ -24,11 +24,18 @@ const Header = () => {
         </Link>
       </li>
       {user?.email && (
-        <li>
-          <Link className="rounded-md px-8" to="/myreviews">
-            My Reviews
-          </Link>
-        </li>
+        <>
+          <li>
+            <Link className="rounded-md px-8" to="/myreviews">
+              My Reviews
+            </Link>
+          </li>
+          <li>
+            <Link className="rounded-md px-8" to="/addpastries">
+              Add Pastry
+            </Link>
+          </li>
+        </>
       )}
       <li>
         <Link className="rounded-md px-8" to="/blogs">

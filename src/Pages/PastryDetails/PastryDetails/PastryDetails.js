@@ -2,8 +2,6 @@ import React, { useContext } from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
-import toast, { Toaster } from "react-hot-toast";
-import Addreview from "../../../Shared/AddReview/AddReview";
 import AddReview from "../../../Shared/AddReview/AddReview";
 import Reviews from "../../../Shared/Reviews/Reviews";
 
@@ -16,7 +14,11 @@ const PastryDetails = () => {
     <div className="max-w-6xl mx-auto">
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row">
-          <img src={thumbnail} className="rounded-lg shadow-2xl m-5" />
+          <img
+            src={thumbnail}
+            className="rounded-lg shadow-2xl m-5"
+            alt="thumbnail"
+          />
           <div className="m-2">
             <h1 className="text-5xl font-semibold">{title}</h1>
             <p className="py-6">{description}</p>
