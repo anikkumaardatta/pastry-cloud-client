@@ -3,10 +3,8 @@ import Review from "./Review/Review";
 
 const Reviews = ({ id }) => {
   const [reviews, setReviews] = useState([]);
-
-  console.log("id:", id, "reviews :", reviews);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews/${id}`)
+    fetch(`https://pastry-cloud-server.vercel.app/reviews/${id}`)
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
@@ -32,7 +30,11 @@ const Reviews = ({ id }) => {
               <Review key={review._id} review={review}></Review>
             ))
           ) : (
-            <div className="text-3xl">No Reviews</div>
+            <>
+              <tr className="text-3xl">
+                <th>No Reviews</th>
+              </tr>
+            </>
           )}
         </tbody>
       </table>

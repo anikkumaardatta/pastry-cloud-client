@@ -25,7 +25,7 @@ const AddPastries = () => {
       thumbnail,
       description,
     };
-    fetch("http://localhost:5000/pastries", {
+    fetch("https://pastry-cloud-server.vercel.app/pastries", {
       method: "POST",
       headers: {
         "content-type": "application/json",

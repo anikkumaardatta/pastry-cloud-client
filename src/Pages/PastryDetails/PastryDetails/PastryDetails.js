@@ -9,7 +9,6 @@ import Reviews from "../../../Shared/Reviews/Reviews";
 const PastryDetails = () => {
   const { user } = useContext(AuthContext);
   usePageTitle("Details");
-  console.log(user);
   const loaderData = useLoaderData();
   const { _id, thumbnail, title, description, price, ratings } = loaderData;
   return (

@@ -15,10 +15,6 @@ const AddReview = ({ loaderData }) => {
     const phoneNumber = form.phone.value;
     const message = form.message.value;
 
-    console.log("name : ", newDate);
-    console.log("phoneNumber : ", phoneNumber);
-    console.log("message : ", message);
-
     const review = {
       pastryId: _id,
       pastryName: title,
@@ -42,7 +38,7 @@ const AddReview = ({ loaderData }) => {
     } else if (message.length < 10) {
       return toastError("Review message is too short");
     } else {
-      fetch("http://localhost:5000/reviews", {
+      fetch("https://pastry-cloud-server.vercel.app/reviews", {
         method: "POST",
         headers: {
           "content-type": "application/json",
@@ -55,10 +51,9 @@ const AddReview = ({ loaderData }) => {
           if (data.acknowledged) {
             toastSuccess("Review added successfully");
             form.reset();
-            // <Navigate to="/myreviews" replace={true}></Navigate>;
           }
         })
-        .catch((error) => console.log(error));
+        .catch((error) => toastError(error.message));
     }
   };
   return (

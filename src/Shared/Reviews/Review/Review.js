@@ -9,7 +9,6 @@ const Review = ({ review }) => {
     reviewDate,
     message,
   } = review;
-  console.log("This is new", review);
   return (
     <tr>
       <td>

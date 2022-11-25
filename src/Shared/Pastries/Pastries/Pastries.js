@@ -7,7 +7,7 @@ const Pastries = () => {
   usePageTitle("Pastries");
 
   useEffect(() => {
-    fetch("http://localhost:5000/pastries")
+    fetch("https://pastry-cloud-server.vercel.app/pastries")
       .then((res) => res.json())
       .then((data) => {
         setPastries(data);

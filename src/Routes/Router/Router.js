@@ -36,7 +36,7 @@ const router = createBrowserRouter([
 
       {
         path: "/blogs",
-        loader: () => fetch(`http://localhost:5000/blogs`),
+        loader: () => fetch(`https://pastry-cloud-server.vercel.app/blogs`),
         element: <Blogs></Blogs>,
       },
       {
@@ -58,7 +58,9 @@ const router = createBrowserRouter([
       {
         path: "/pastries/:id",
         loader: ({ params }) => {
-          return fetch(`http://localhost:5000/pastry/${params.id}`);
+          return fetch(
+            `https://pastry-cloud-server.vercel.app/pastry/${params.id}`
+          );
         },
         element: <PastryDetails></PastryDetails>,
       },

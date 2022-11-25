@@ -6,7 +6,7 @@ const MyPastries = () => {
   const [pastries, setPastries] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/pastries/3")
+    fetch("https://pastry-cloud-server.vercel.app/pastries/3")
       .then((res) => res.json())
       .then((data) => {
         setPastries(data);
