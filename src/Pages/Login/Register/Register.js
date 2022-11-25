@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import registerSVG from "../../../assets/images/register.svg";
 import googleLogo from "../../../assets/google30.png";
@@ -11,6 +11,7 @@ const Register = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState("");
 
   const handleSubmitRegister = (event) => {
     event.preventDefault();
@@ -27,13 +28,13 @@ const Register = () => {
         updateUser(name, photo)
           .then(() => {
             form.reset();
-            navigate(from, { replace: true });
           })
           .catch((error) => {
             // An error occurred
-            console.log(error);
+            setError(error.message);
             // ...
           });
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.error(error);
@@ -48,7 +49,7 @@ const Register = () => {
         console.log(user);
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
   return (
@@ -115,10 +116,16 @@ const Register = () => {
             </div>
             <label className="label">
               <div>
-                Already have an account?
-                <Link className="link ml-1 text-rose-600" to="/login">
-                  Login now
-                </Link>
+                {error ? (
+                  <div className="text-red-500">{error}</div>
+                ) : (
+                  <div>
+                    Already have an account?
+                    <Link className="link ml-1 text-rose-600" to="/login">
+                      Login now
+                    </Link>
+                  </div>
+                )}
               </div>
             </label>
             <div className="divider">OR</div>

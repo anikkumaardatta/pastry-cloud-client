@@ -16,7 +16,6 @@ const About = () => {
             baking powder or soda. The dough is rolled out and then cut into
             shapes, which are then baked.
           </p>
-          <button className="btn btn-primary">Get Started</button>
         </div>
       </div>
     </div>

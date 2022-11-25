@@ -1,4 +1,5 @@
 import AddPastries from "../../Pages/AddPastries/AddPastries";
+import Blogs from "../../Pages/Blogs/Blogs";
 import Login from "../../Pages/Login/Login/Login";
 import Register from "../../Pages/Login/Register/Register";
 import MyReviews from "../../Pages/MyReviews/MyReviews";
@@ -31,6 +32,12 @@ const router = createBrowserRouter([
       {
         path: "/pastries",
         element: <Pastries></Pastries>,
+      },
+
+      {
+        path: "/blogs",
+        loader: () => fetch(`http://localhost:5000/blogs`),
+        element: <Blogs></Blogs>,
       },
       {
         path: "/myreviews",

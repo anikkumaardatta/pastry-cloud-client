@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import loginSVG from "../../../assets/images/login.svg";
 import googleLogo from "../../../assets/google30.png";
@@ -11,6 +11,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
+  const [error, setError] = useState("");
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
@@ -23,7 +24,7 @@ const Login = () => {
         form.reset();
         navigate(from, { replace: true });
       })
-      .catch((error) => console.error(error));
+      .catch((error) => setError(error.message));
   };
   const handleGoogleSignIn = () => {
     googleSignIn()
@@ -33,7 +34,7 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch((error) => {
-        console.log(error);
+        setError(error.message);
       });
   };
   return (
@@ -77,12 +78,16 @@ const Login = () => {
               </button>
             </div>
             <label className="label">
-              <div>
-                New to Pastry Cloud?
-                <Link className="link ml-1 text-rose-600" to="/register">
-                  Register now
-                </Link>
-              </div>
+              {error ? (
+                <div className="text-red-500">{error}</div>
+              ) : (
+                <div>
+                  New to Pastry Cloud?
+                  <Link className="link ml-1 text-rose-600" to="/register">
+                    Register now
+                  </Link>
+                </div>
+              )}
             </label>
             <div className="divider">OR</div>
             <div className="form-control">
