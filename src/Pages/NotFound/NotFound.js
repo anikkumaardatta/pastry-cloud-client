@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import img from "../../assets/images/notfound.svg";
+import usePageTitle from "../../Hooks/usePageTitle";
 
 const NotFound = () => {
+  usePageTitle("404");
   return (
     <div className="hero bg-base-200">
       <div className="hero-content max-w-6xl flex-col lg:flex-row">

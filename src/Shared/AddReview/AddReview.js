@@ -7,7 +7,6 @@ import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
 const AddReview = ({ loaderData }) => {
   const { user } = useContext(AuthContext);
   const { _id, title } = loaderData;
-  const navigate = useNavigate();
 
   const handleAddReview = (event) => {
     event.preventDefault();
@@ -36,9 +35,9 @@ const AddReview = ({ loaderData }) => {
 
     if (phoneNumber.length > 14 || phoneNumber.length < 11) {
       return toastError("Please provide a valid phone number");
-    } else if (message.length > 100) {
+    } else if (message.length > 500) {
       return toastError(
-        "Review message too long (please wright a review message les then 100 characters long"
+        "Review message too long (please wright a review message les then 500 characters long"
       );
     } else if (message.length < 10) {
       return toastError("Review message is too short");
@@ -56,7 +55,6 @@ const AddReview = ({ loaderData }) => {
           if (data.acknowledged) {
             toastSuccess("Review added successfully");
             form.reset();
-            navigate("/myreviews");
             // <Navigate to="/myreviews" replace={true}></Navigate>;
           }
         })

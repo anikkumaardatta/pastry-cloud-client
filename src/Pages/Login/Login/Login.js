@@ -1,11 +1,16 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import loginSVG from "../../../assets/images/login.svg";
 import googleLogo from "../../../assets/google30.png";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import usePageTitle from "../../../Hooks/usePageTitle";
 
 const Login = () => {
   const { signIn, googleSignIn } = useContext(AuthContext);
+  usePageTitle("Login");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
 
   const handleSubmitLogin = (event) => {
     event.preventDefault();
@@ -15,7 +20,8 @@ const Login = () => {
     signIn(email, pass)
       .then((userCredential) => {
         const user = userCredential.user;
-        console.log("Login", user);
+        form.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => console.error(error));
   };
@@ -23,7 +29,8 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         const user = result.user;
-        console.log(user);
+        from.reset();
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);

@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import registerSVG from "../../../assets/images/register.svg";
 import googleLogo from "../../../assets/google30.png";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import usePageTitle from "../../../Hooks/usePageTitle";
 
 const Register = () => {
   const { createUser, updateUser, googleSignIn } = useContext(AuthContext);
+  usePageTitle("Register");
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
+
   const handleSubmitRegister = (event) => {
     event.preventDefault();
     const form = event.target;
@@ -20,9 +26,8 @@ const Register = () => {
         console.log(name);
         updateUser(name, photo)
           .then(() => {
-            // Profile updated!
-            console.log("Updated");
-            // ...
+            form.reset();
+            navigate(from, { replace: true });
           })
           .catch((error) => {
             // An error occurred

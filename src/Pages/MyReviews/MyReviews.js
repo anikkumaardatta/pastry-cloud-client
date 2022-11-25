@@ -2,10 +2,15 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaRegEdit, FaRegTrashAlt } from "react-icons/fa";
 import { json } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider/AuthProvider";
+import usePageTitle from "../../Hooks/usePageTitle";
 
 const MyReviews = () => {
   const { user, loading } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
+  usePageTitle("My Reviews");
+
+  const reviewsCopyReverse = myReviews.slice(0, myReviews.length).reverse();
+
   console.log(user);
   useEffect(() => {
     fetch(`http://localhost:5000/reviews?email=${user?.email}`)
@@ -40,7 +45,7 @@ const MyReviews = () => {
             You have reviewed {myReviews.length} items
           </h1>
           <div className="grid grid-cols-1 gap-6">
-            {myReviews.map((myReview) => (
+            {reviewsCopyReverse.map((myReview) => (
               <div className="">
                 <div className="card bg-base-100 shadow-xl bor border-solid hover:border-dotted border-2 border-rose-600">
                   <div className="card-body">

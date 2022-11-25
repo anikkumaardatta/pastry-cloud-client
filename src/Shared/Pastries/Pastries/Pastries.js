@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import usePageTitle from "../../../Hooks/usePageTitle";
 import Pastry from "../Pastry/Pastry";
 
 const Pastries = () => {
   const [pastries, setPastries] = useState([]);
+  usePageTitle("Pastries");
 
   useEffect(() => {
     fetch("http://localhost:5000/pastries")

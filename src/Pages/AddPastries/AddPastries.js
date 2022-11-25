@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa";
+import usePageTitle from "../../Hooks/usePageTitle";
 
 const AddPastries = () => {
+  usePageTitle("Add Pastry");
   // {
   //  thumbnail: "https://i.ibb.co/RcTB3Xm/Lemon-Layer-Pastry.jpg"
   //  title: "Lemon Layer Pastry 120gm"

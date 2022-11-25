@@ -2,11 +2,13 @@ import React, { useContext } from "react";
 import { FaPlus } from "react-icons/fa";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../Context/AuthProvider/AuthProvider";
+import usePageTitle from "../../../Hooks/usePageTitle";
 import AddReview from "../../../Shared/AddReview/AddReview";
 import Reviews from "../../../Shared/Reviews/Reviews";
 
 const PastryDetails = () => {
   const { user } = useContext(AuthContext);
+  usePageTitle("Details");
   console.log(user);
   const loaderData = useLoaderData();
   const { _id, thumbnail, title, description, price, ratings } = loaderData;
