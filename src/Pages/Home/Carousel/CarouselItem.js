@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./CarouselItem.css";
 
 const CarouselItem = ({ carouselItem }) => {
@@ -14,7 +15,10 @@ const CarouselItem = ({ carouselItem }) => {
               {carouselItem.title}
             </h1>
             <p className="py-6"></p>
-            <button className="btn btn-error">Order Now</button>
+
+            <Link to="/pastries">
+              <button className="btn btn-error">All Pastries</button>
+            </Link>
           </div>
         </div>
       </div>

@@ -19,7 +19,7 @@ const Header = () => {
         </Link>
       </li>
       <li>
-        <Link className="rounded-md px-8" to="Pastries">
+        <Link className="rounded-md px-8" to="/pastries">
           Pastries
         </Link>
       </li>
