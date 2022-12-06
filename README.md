@@ -8,9 +8,9 @@ https://pastry-cloud.web.app
 
 https://github.com/anikkumaardatta/pastry-cloud-client
 
-### [PastryCloud_Server_Side_Repo](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-anikkumaardatta)
+### [PastryCloud_Server_Side_Repo](https://github.com/anikkumaardatta/pastry-cloud-server)
 
-https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-anikkumaardatta
+https://github.com/anikkumaardatta/pastry-cloud-server
 
 ## All Features
 
