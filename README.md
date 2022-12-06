@@ -4,7 +4,7 @@
 
 https://pastry-cloud.web.app
 
-### [PastryCloud_Client_Side_Repo](https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-anikkumaardatta)
+### [PastryCloud_Client_Side_Repo](https://github.com/anikkumaardatta/pastry-cloud-client)
 
 https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-anikkumaardatta
 
